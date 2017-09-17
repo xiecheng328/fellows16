@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">div1111</div>
+<!--
+事件：事件源  事件处理函数 事件对象  e || window.event
+
+事件冒泡  内=>外
+事件捕获  外=>里
+先捕获后冒泡
+标准浏览器:addEventListener 第三个参数  false冒泡 true捕获
+IE:attachEvent    绑定顺序问题   this指向window
+
+阻止事件传播：e.stopPropagation();   window.event.cancelBubble = true;
+
+事件委托、事件代理
+1、子元素事件为委托给父元素绑定  事件源： e.target  window.event.srcElement
+2、后生成的元素事件绑定问题
+
+
+call apply bind
+
+
+removeChild()
+appendChild()
+-->
+
+<script>
+    /*document.getElementById("div1");
+    document.getElementsByTagName("div");
+    document.getElementsByClassName("aa");
+    document.getElementsByName("username");*/
+
+    /*var oDiv1 = document.querySelector("#div1 .aa");
+    console.log(oDiv1.innerHTML);
+    console.log(document.querySelectorAll("#div1 .aa"));*/
+    var oDiv1 = document.querySelector("#div1");
+/*    oDiv1.onclick = function(){
+        console.log(1);
+    };
+    oDiv1.onclick = function(){
+        console.log(2);
+    };*/
+    oDiv1.addEventListener("click", function(){
+        console.log(1);
+    }, false);
+    oDiv1.addEventListener("click", function(){
+        console.log(2);
+    }, false);
+
+//    oDiv1.attachEvent("onclick", function(){});
+
+    var obj = {
+        name : "zhangsan",
+        age : 18
+    };
+    function fn(a, b){
+        console.log(this);
+        console.log(a);
+        console.log(b);
+    }
+//    fn.call(obj, 2, 3);
+//    fn.apply(obj, [2, 3]);
+    fn.bind(obj)(2, 3);
+
+
+
+</script>
+</body>
+</html>

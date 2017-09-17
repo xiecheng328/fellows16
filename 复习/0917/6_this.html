@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <script>
+        //this  当前对象的引用
+        //call apply bind
+        function fn(){
+            console.log(this);//window
+        }
+        fn();
+        var oDiv1 = document.querySelector("#div1");
+        oDiv1.addEventListener("click", function(){
+            console.log(this);
+        });
+
+        setInterval(function(){
+            console.log(this);
+        }, 1000);
+
+    </script>
+</body>
+</html>
