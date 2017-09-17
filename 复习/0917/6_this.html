@@ -22,6 +22,19 @@
             console.log(this);
         }, 1000);
 
+        var obj = {
+            name : "zhangsan",
+            age : 18
+        };
+        function fn(a, b){
+            console.log(this);
+            console.log(a);
+            console.log(b);
+        }
+        //    fn.call(obj, 2, 3);
+        //    fn.apply(obj, [2, 3]);
+        fn.bind(obj)(2, 3);
+
     </script>
 </body>
 </html>
