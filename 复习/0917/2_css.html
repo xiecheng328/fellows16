@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*内部样式*/
+        #div1{
+            background: #00ff00;
+        }
+
+        #div2{
+            width: 200px;
+            height: 200px;
+            background: #00ff00;
+            padding: 100px;
+            box-sizing: border-box;
+        }
+        #div3{
+            border-width: 50px;
+            border-style: solid;
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: #ff0;
+            width: 0;
+        }
+        #ul1 li{
+            float: left;
+            list-style: none;
+        }
+
+        /* 塌陷问题 */
+        #ul1{
+            /*height: 30px;*/
+            /*float: left;*/
+            /*position: absolute;*/
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #div2::after{
+            content: "123";
+        }
+
+        #span1{
+            background: #ff0000;
+            /*margin-left: 100px;*/
+            /*margin-right: 100px;*/
+            /*margin-top: 100px;*/
+            /*margin-bottom: 100px;*/
+            padding: 100px;
+        }
+        #span2{
+            background: #00ff00;
+        }
+
+    </style>
+
+    <!--  外部样式 -->
+    <!--<link rel="stylesheet" href="xx.css">-->
+</head>
+<body>
+<!--
+权重值：  内联>id>class>tag
+
+盒模型：
+    标准盒模型: 宽度=内容宽度
+    怪异盒模型/混杂模式:宽度=内容+padding+border
+    转化：    box-sizing: border-box;
+
+元素塌陷问题
+
+-->
+
+
+
+    <!-- 内联样式 -->
+    <div id="div1" style="background: #ff0000;">div</div>
+    <div id="div2">div2</div>
+
+    <div id="div3"></div>
+
+    <ul id="ul1">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+        <li>004</li>
+    </ul>
+
+    <h1>hhhhhhh</h1>
+    <div>hhhhhhh</div>
+
+    <span id="span1">span1</span><span id="span2">span2</span>
+    <div style="background: #00ff00;">divdvi</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+js基本数据类型：undefined null number string boolean
+var
+function
+-->
+<script>
+    function fn(num){
+        console.log(num + 17);
+    }
+    fn('20');
+
+    function fn(num){
+        console.log(num + 16);
+    }
+
+
+    var fn1 = function(){
+        console.log(123);
+    };
+    fn1();
+
+    fn2();
+    function fn2(){
+        console.log('fn2');
+    }
+
+    function fn3() {
+        //类数组
+        console.log(arguments);
+        console.log(arguments[0]);
+        console.log(arguments[1]);
+        console.log(arguments[2]);
+//        arguments.callee()
+    }
+    fn3(2, 3);
+
+
+    /*var str = "asdfdsaffsda";
+    console.log(str.indexOf("adfd"));*/
+
+    /*var arr = [1, 2, NaN, 3, '1'];
+    console.log(arr.indexOf(NaN));//-1*/
+
+    var obj1 = {
+        name : "zhangsan",
+        age: 18
+    };
+    var obj2 = obj1;
+    obj1.name = "lisi";
+    console.log(obj2.name);//lisi
+
+
+    var a = 5;
+    var b = a;
+    a = 6;
+    console.log(b);//5
+
+    if(NaN == NaN){
+        console.log("true");
+    }else{
+        console.log("false");
+    }
+
+//    console.log(undefined === null);
+//    console.log(typeof undefined);//undefined
+//    console.log(typeof null);//object
+    console.log(5 / 0);//Infinity
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
