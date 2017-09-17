@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            /*
+                其他语言变量的定义：
+                int a = 5;
+                a = "asdf";error
+                string b = "javascript";
+                short long double float boolean
+                char ......
+
+                js： 弱类型的语言
+                var:variable
+
+                js的基本数据类型五种：
+                number string boolean(true/false) undefined null
+
+               NaN:not a number
+            */
+            var a = 8;
+            var b = "abc";
+            var c = 0.5;
+            var d = true;
+            var e = "a";
+            var name = "zhangsan";
+            var age = 20;
+            var sex = true;
+            var school;
+            var f;//undefined
+
+            /*console.log(typeof a);
+            console.log(typeof b);
+            console.log(typeof c);
+            console.log(typeof d);
+            console.log(typeof e);
+            console.log(typeof f);
+            console.log(typeof(f));
+
+            console.log(a + 2);
+            console.log(a * 2);*/
+
+//            var 34bad;//不能以数字开头
+//            var per人 = 55;//不能包含中文
+//            console.log(per人);
+//            var bad-var;//非法的-
+//            var var;//var就是一个关键字，所以很明显不能用来做变量名
+            var $a = 5;
+            console.log($a);
+
+            var myNameStr = "lisi";//驼峰式
+
+            var g = 1, h = 2, i;
+            console.log(typeof g);
+            g = "abc";
+            console.log(typeof g);
+//            alert(g);
+//            alert(h);
+            var j;
+            g += "def";//相当于：g = g + "def";
+            console.log(g);
+
+            var k = 5;
+//            console.log(typeof(k + "10"));
+//            console.log(k - "a");
+
+            console.log(++k);//k = k + 1;
+            console.log(k);
+            console.log(2 === "2");
+//            alert( (2<4)==(5>3)==(3<=3)==(2>=2)==(2!=2)==(2==2)==true );
+            console.log(5 / 0);
+            var l = false;//true:1  false:0
+            console.log(typeof(l + ""));
+
+            if(" "){
+                console.log("true");
+            }else{
+                console.log("false");
+            }
+
+            //命名规范
+            var iNum = 5;//int
+            var fNum = 0.5;//float
+            var sName = "zhangsan";//string
+            var bFlag = true;//boolean
+            var oPerson = {};//object
+
+            var result = window.prompt("请输入", "hello");
+            console.log(result);
+
+            var abcdef = "123";
+//            console.log(window.abcdef);
+            window.alert(123);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
