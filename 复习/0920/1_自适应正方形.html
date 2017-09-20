@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            height: 2000px;
+        }
+        #div1{
+            background: #ff0000;
+            padding-top: 100%;/* 百分比相对于父元素的宽度 */
+        }
+        #div2{
+            background: #00ff00;
+        }
+        #div2::after{
+            content: '';
+            display: block;
+            padding-top: 100%
+        }
+        #div3{
+            background: #ffff00;
+            overflow: hidden;
+        }
+        #div3::after{
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+        #div4{
+            background: #0000ff;
+            height: 100vw;
+        }
+        #div5{
+            font-size: 20px;
+        }
+        #div6{
+            width: 10em;
+            height: 10em;
+            background: #cccccc;
+        }
+    </style>
+</head>
+<body>
+<!--
+单位：px  %  em  rem   deg  vw  vh  vmax vmin
+-->
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+
+    <div id="div5">div5
+        <div id="div6">div6</div>
+    </div>
+</body>
+</html>

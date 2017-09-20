@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul1 li:nth-child(1){/* 1开始，不支持负数 */
+            background: #ff0000;
+        }
+        #div1{
+            text-shadow: 10px 10px 2px rgba(255, 0, 0, .5);
+        }
+        #div2{
+            border: 1px solid;
+            width: 200px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        #div3{
+            display: flex;
+        }
+        #div4{
+            background: #ff0000;
+            flex-grow: 1;
+            height: 300px;
+            width: 0;
+        }
+        #div5{
+            background: #00ff00;
+            flex-grow: 1;
+            height: 300px;
+            width: 0;
+        }
+        #div6{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            transition: all 1s ease;
+        }
+        #div6:hover{
+            background: #00ff00;
+        }
+
+        @keyframes xx {
+
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<div id="div1">div1</div>
+<div id="div2">阿斯顿发斯蒂芬撒地方阿斯顿发斯蒂芬阿斯顿发斯蒂芬</div>
+<div id="div3">
+    <div id="div4">
+        <h1>asfafasf</h1>
+    </div>
+    <div id="div5">
+        <div>kkk</div>
+    </div>
+</div>
+
+<div id="div6"></div>
+</body>
+</html>
