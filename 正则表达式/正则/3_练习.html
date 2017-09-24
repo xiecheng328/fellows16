@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 匹配结尾的数字
+    // 如
+    // 30CAC0040 取出0040
+    // 3SFASDF92 取出92
+
+    var str = "30CAC0040";
+    var reg = /\d+$/;
+    console.log(reg.exec(str));
+    console.log(str.match(reg));
+
+//     统一空格个数
+// 字符串内如有空格，但是空格的数量可能不一致，通过正则将空格的个数统一变为一个。 
+// 例如:蓝色理 想
+// 变成:蓝 色 理 想
+        var str2 = "蓝 色  理      想";
+        var reg2 = /\s+/g;
+        console.log(str2.replace(reg2, " "));
+
+        // 判断字符串是不是由数字组成
+        var str3 = "123123";
+        var reg3 = /\D/;
+        if(!reg3.test(str3)){
+            console.log("全是数字");
+        }else{
+            console.log("不全是数字");
+        }
+
+        //手机号码正则表达式
+// 正则验证手机号，忽略前面的0，支持130-139，150-159。忽略前面0之后判断它是11位的。
+
+        var str4 = "13136666328";
+        var reg4 = /^0*1(3|5)\d{9}$/;
+        console.log(reg4.exec(str4));
+
+
+        function getByClass(className, context) {
+            context = context || document;
+            var result = [];
+            var arr = context.getElementsByTagName('*');
+            var re = new RegExp("\\b"+className+"\\b");// 表示边界
+            for(var i=0; i<arr.length; i++){
+                if(re.test(arr[i].className)){
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
