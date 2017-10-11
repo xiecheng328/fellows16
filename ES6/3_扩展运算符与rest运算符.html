@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>11</div>
+    <div>22</div>
+    <div>33</div>
+
+    <script>
+        /* function foo(...arg) {
+            // console.log(arguments[0], arguments[1]);
+            console.log(arg);
+        }
+        foo(5, 6, 7, 8);
+
+        let arr1 = [1, 2];
+        let arr2 = [3, ...arr1, 4]
+        console.log(arr2); */
+
+        /* let arr1 = [1, 2, 3, 4];
+        let arr2 = [...arr1];
+        console.log(arr1);
+        arr1.push(5);
+        console.log(arr2); */
+
+        /* let arr1 = [1, 2];
+        let arr2 = [3, 4]
+        // let arr3 = arr1.concat(arr2);
+        let arr4 = [...arr1, ...arr2];
+        console.log(arr4); */
+
+        /* function foo(...arg){
+            console.log(arg);
+        }
+        let obj1 = {
+            name: 'zhangsan',
+            age: 18
+        };
+        let obj2 = {
+            name: 'lisi',
+            age: 20
+        };
+        // foo(obj1, obj2);
+
+        let obj3 = {...obj1, ...obj2}; */
+        // console.log(obj3);
+        // console.log(Object.assign(obj1, obj2));
+
+
+        /* let aDiv = document.querySelectorAll("div");
+        console.log(aDiv.constructor);//类数组
+
+        let [div1, div2, div3] = [...aDiv];
+        // for(let i=0; i<aDiv.length; i++){
+        //     arr.push(aDiv[i]);
+        // }
+        // arr.push(123);
+        console.log(div1, div2, div3); */
+        // let arr = [1, 2, 3];
+        // console.log(arr.constructor);
+
+
+        /* let obj1 = {
+            name: 'zhangsan',
+            age: 18
+        };
+
+        let {name, age} = obj1;
+        console.log(name, age); */
+
+        //rest运算符，必须放在最后一个
+        function foo(a, b, ...arg) {
+            console.log(a);
+            console.log(b);
+            console.log(arg);
+        }
+        foo(5, 6, 7, 8, 9, 10);
+    </script>
+</body>
+
+</html>

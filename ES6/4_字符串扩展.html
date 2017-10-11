@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let str = new String('abc);
+        let arg = 'hello';
+        /* let str = 'asdfasfa'
+            + 'sfsafasdf' + arg + 'sad<h1>fsa</h1>df'
+            + 'asfasfa';
+        document.write(str); */
+
+        /* let a = 5, b = 6;
+        let str1 = `asdfa
+        sdfasfasdfasdfa
+        sdfsadfs${arg}af<h1>5+6=${a+b}</h1>
+        daf`;
+        document.write(str1); */
+
+        let str = '啊hello world world';
+         console.log(str.indexOf('啊hello'));
+        /*console.log(str.includes('x')); */
+        console.log(str.startsWith('哦'));
+        console.log(str.endsWith('world1'));
+
+        //startswith
+        function sw(str, target){
+            if(str.indexOf(target) == 0){
+                return true;
+            }
+            return false;
+        }
+        console.log(sw(str, '啊hello1'));
+
+        //endswith
+        function ew(str, target){
+            if(str.lastIndexOf(target) == str.length - target.length){//12-5
+                return true;
+            }
+            return false;
+        }
+        console.log(ew(str, 'world'));
+
+        let str2 = 'xy';
+        // console.log(str2.padStart(8, 'abc'));
+        // console.log(str2.padEnd(8, 'abc'));
+        console.log(str2.repeat(5));
+        
+
+
+
+    </script>
+</body>
+
+</html>

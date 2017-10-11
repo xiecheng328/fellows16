@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* let arr = [1, 2, 3];
+        let a = arr[0];
+        let b = arr[1];
+        let c = arr[2];
+        console.log(a, b, c); */
+
+        /* let [a, b, c] = [1, 2, 3];
+        console.log(b, a, c); */
+
+        /* let [a, b, [c], e] = [1, 2, [3, 4], 5];
+        console.log(a,b,c,e); */
+
+        /* let [a, b, c, e] = [1, 2, [3, 4], 5];
+        console.log(a,b,c,e); */
+
+        /* let [a, b, [c, d=4], e] = [1, 2, [3, 8], 5];
+        console.log(a, b, c, d, e); */
+
+        /* function foo(){
+            console.log(123);
+        }
+        let [a=foo()] = [];  */
+
+        /* let obj = {
+            name: 'zhangsan',
+            age: 18
+        }; */
+        /* let name = obj.name;
+        let age = obj.age; */
+        // let {age, name} = obj;
+        /* let {age:age1, name:name1} = obj;
+        console.log(name1, age1); */
+
+        /* let str = 'hel lo';
+        let [a, b, c, d, e, f] = str;
+        console.log(a, b, c, d, e, f); */
+
+        /* function add([x=0, y=0]){
+            console.log(x + y);
+        }
+        let arr = [];
+        add(arr); */
+
+        /* function foo({name, age, school='XX大学'}){
+            console.log(name, age, school);
+        }
+
+        let obj = {
+            name: 'lisi',
+            age: 20,
+            school: '农大'
+        };
+        foo(obj);
+ */
+        /* function foo() {
+            let arr = ['aa', 'bb', 'cc'];
+            return arr;
+        }
+        let [a, b, c] = foo();
+        console.log(a, b, c); */
+        /* function foo() {
+            let obj = {
+                name: 'lisi',
+                age: 20,
+                school: '农大'
+            };
+            return obj;
+        }
+        let {name:a, age:b, school:c} = foo();
+        console.log(a, b, c); */
+
+        /* var a = 5;
+        var b = 6; */
+
+        /* let temp = a;
+        a = b;
+        b = temp; */
+
+        /* a = a + b;//a=11
+        b = a - b;//b=5
+        a = a - b;//a=6 */
+
+        // let arr = [a, b];
+
+        // a = [b, b = a][0];
+
+        /* var[a,b] = [b,a];
+        console.log(a, b);//6 5
+ */
+
+        /* let json = '{"a": "Hello", "b": "World"}';
+        let obj = JSON.parse(json);
+        let { a, b } = obj;
+        console.log(a, b); */
+
+        let a = 2;
+        ({a} = {a:1});
+        console.log(a);
+    </script>
+</body>
+
+</html>
