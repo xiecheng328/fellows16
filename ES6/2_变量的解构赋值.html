@@ -33,15 +33,15 @@
         }
         let [a=foo()] = [];  */
 
-        /* let obj = {
-            name: 'zhangsan',
-            age: 18
-        }; */
-        /* let name = obj.name;
-        let age = obj.age; */
-        // let {age, name} = obj;
-        /* let {age:age1, name:name1} = obj;
-        console.log(name1, age1); */
+        // let obj = {
+        //     name: 'zhangsan',
+        //     age: 18
+        // };
+        // /* let name = obj.name;
+        // let age = obj.age; */
+        // // let {age, name} = obj;
+        // let {age:age1, name:name1} = obj;// :别名
+        // console.log(name1, age1);
 
         /* let str = 'hel lo';
         let [a, b, c, d, e, f] = str;
@@ -62,8 +62,8 @@
             age: 20,
             school: '农大'
         };
-        foo(obj);
- */
+        foo(obj); */
+
         /* function foo() {
             let arr = ['aa', 'bb', 'cc'];
             return arr;
@@ -97,15 +97,15 @@
         // a = [b, b = a][0];
 
         /* var[a,b] = [b,a];
-        console.log(a, b);//6 5
- */
+        console.log(a, b);//6 5 */
+
 
         /* let json = '{"a": "Hello", "b": "World"}';
         let obj = JSON.parse(json);
         let { a, b } = obj;
         console.log(a, b); */
 
-        let a = 2;
+        let a;
         ({a} = {a:1});
         console.log(a);
     </script>
