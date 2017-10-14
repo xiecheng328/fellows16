@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">div1</div>
+
+    <script>
+
+        /* function add(x, y='abc') {
+            // y = y || 0;
+            return `${x} + ${y}`;
+        }
+        console.log(add('hello', ''));
+ */
+        /* function foo([a, b, c, d, e]) {
+            console.log(a, b, c, d, e);
+        }
+        foo([1, 2, 3, 4, 5]); */
+
+        /* function foo({name, age}){
+            console.log(name, age);
+        }
+        let obj = {
+            name: 'zhangsan',
+            age: 18
+        };
+        foo(obj); */
+
+        /* function add (x=0, y=0) {
+            return x + y;
+        }
+        add(5, 6);
+        console.log(add.length);//返回的是函数没有指定默认值的参数的个数
+        console.log(add.name); */
+
+        /* function foo(a, b, ...arg) {
+            console.log(arg);
+        }
+        foo(1, 2, 3, 45, 6, 8, 9); */
+
+
+        /* a = 5;
+        console.log(a); */
+
+        /* function foo () {
+           console.log(this);
+        }
+        foo(); */
+
+        /* function People (name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        let p1 = new People('lisi', 18); */
+
+        /* function foo(a, a, c) {
+            console.log(a, a, c);
+        }
+        foo(4, 5, 6); */
+
+        /* let a = 5;
+        let obj = {
+            a: 6
+        };
+        with(obj){
+            console.log(a);
+        } */
+
+        /* function foo (num) {
+            'use strict';
+            if(num == 1){
+                return 1;
+            }
+            return num * arguments.callee(num - 1);
+        }
+        console.log(foo(5)); */
+
+        /* function add (x, y) {
+            'use strict';
+            return x + y;
+        }
+        console.log(add(5, 6)); */
+
+        /* function foo([a, b, c, d, e]) {
+            'use strict';
+            console.log(a, b, c, d, e);
+        }
+        foo([1, 2, 3, 4, 5]); */
+
+        /* function foo(...arg) {
+            'use strict';
+            console.log(arg);
+        }
+        foo(1, 2, 3, 45, 6, 8, 9); */
+
+        //箭头函数 =>
+        /* function add(x, y) {
+            return x + y;
+        }
+        console.log(add(5, 6));
+
+        let add2 = (x, y) => { return x + y };
+        console.log(add2(5, 6));
+
+        let x = x => x;
+        console.log(x(5)); */
+
+        /* let add = (x=0, y=0) => x + y;
+        console.log(add(5,6)); */
+
+        /* let foo = (...arg) => console.log(arg);
+        foo(1, 2, 3, 45, 6, 8, 9); */
+        /* let obj = {
+            name: 'lisi',
+            age: 18
+        };
+        let foo = ({name, age}) => {
+            // console.log(name, age);
+            console.log(arguments);// 不能使用arguments
+        };
+        foo(obj); */
+
+        /* let People = (name, age) => { */
+        /*     this.name = name; */
+        /*     this.age = age; */
+        /* }; */
+        /* let p1 = new People('lisi', 18);//不能用于构造函数 */
+
+        /* let oDiv1 = document.querySelector("#div1");
+        oDiv1.addEventListener('click', function(){
+            console.log(this);
+            setTimeout(() => {
+                console.log(this);
+            }, 2000);
+        }); */
+
+        let a = 5;
+        var b = 6;
+        console.log(window.a);
+        console.log(window.b);
+        let obj = {
+            a : 6,
+            foo: function(){
+                console.log(this);//this->obj
+            },
+            foo2: ()=>{
+                console.log(this.a);//this->window
+            }
+        };
+        obj.foo();
+        obj.foo2();
+
+
+        
+    </script>
+</body>
+
+</html>
