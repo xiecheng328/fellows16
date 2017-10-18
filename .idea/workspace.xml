@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e78c22d1-325f-4185-842c-bfb0c19ac97a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ES6/11_map.html" afterPath="$PROJECT_DIR$/ES6/11_map.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ES6/7_数组扩展.html" afterPath="$PROJECT_DIR$/ES6/7_数组扩展.html" />
-    </list>
+    <list default="true" id="e78c22d1-325f-4185-842c-bfb0c19ac97a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -241,7 +238,7 @@
       <workItem from="1507716694349" duration="723000" />
       <workItem from="1507947850798" duration="529000" />
       <workItem from="1508299109001" duration="101000" />
-      <workItem from="1508312692541" duration="2279000" />
+      <workItem from="1508312692541" duration="2370000" />
     </task>
     <task id="LOCAL-00001" summary="把小伙伴14的代码打分支到小伙伴16">
       <created>1505609754694</created>
@@ -289,7 +286,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24088000" />
+    <option name="totallyTimeSpent" value="24179000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />

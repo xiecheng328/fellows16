@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //类 对象
+        /* function People(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        People.prototype.showName = function(){
+            console.log("我的名字是:" + this.name);
+        };
+
+        var p1 = new People('zhangsan', 18);
+        console.log(p1.name);
+        p1.showName();
+
+
+        //基于原型的继承
+        function Coder(name, age){
+            People.call(this, name, age);//继承父类的属性
+        }
+        Coder.prototype = new People();//继承父类的方法
+
+        var c1 = new Coder('lisi', 20);
+        console.log(c1.name);
+        c1.showName(); */
+
+        class People {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            showName() {
+                console.log("我的名字是:" + this.name);
+            }
+        }
+        var p1 = new People('zhangsan', 18);
+        console.log(p1.name);
+        p1.showName();
+
+        class Coder extends People{
+            constructor(name, age, company){
+                super(name, age);
+                this.company = company;
+            }
+            showCompany(){
+                console.log(`我的公司是:${this.company}`);
+            }
+            static foo(){//静态方法
+                console.log('我是静态方法');
+            }
+        }
+        let c1 = new Coder('lisi', 20, '百度');
+        console.log(c1.name);
+        c1.showName();
+        c1.showCompany();
+        Coder.foo();
+
+
+        /* var now = new Date();
+        now.getFullYear();
+        var str = 'abc';
+        str.indexOf();
+        var arr = [];
+        arr.push();
+
+        Math.random();
+        Math.floor(); */
+
+    </script>
+</body>
+
+</html>
