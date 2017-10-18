@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* let obj = {
+            name : 'lisi'
+        };
+        console.log(obj.name); */
+
+        //对象的属性
+        /* var pro = new Proxy({
+            name : 'lisi',
+            age: 18
+        }, {
+            get: (target, key, property) => {
+                console.log('get');
+                return target[key];
+            },
+            set: (target, key, value, receiver) => {
+                console.log('set');
+                return target[key] = value;
+            }
+        });
+        pro.name = 'zhangsan';
+        console.log(pro); */
+
+        //对象的方法
+        let target = () => {
+            console.log('target fn');
+            // return 'target fn';
+        };
+        let handler = {
+            apply(target, ctx, args){
+                console.log('apply');
+                return Reflect.apply(...arguments);
+            }
+        };
+        let pro = new Proxy(target, handler);
+        pro();
+
+    </script>
+</body>
+
+</html>

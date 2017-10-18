@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul id="product">
+
+</ul>
+
+<script src="jquery-1.11.2.js"></script>
+<script>
+    //jquery $.get() $.post()
+    //        let $product = $('#product');
+    //        $.get('product-data.json', function(res){
+    //            console.log(res);
+    //            let list = res.productData;
+    //            for(let item of list){
+    //                let $li = $(`<li>${item.name}</li>`);
+    //                $product.append($li);
+    //            }
+    //        }, 'json');
+
+    //ajax原理
+
+    /* //1、创建对象
+     var xmlhttp;
+     if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+     xmlhttp = new XMLHttpRequest();
+     } else {// code for IE6, IE5
+     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+     }
+
+     //2、向服务器发送请求
+     xmlhttp.open("GET", "test1.txt", true);
+     xmlhttp.send();
+
+     //3、服务器响应
+     xmlhttp.onreadystatechange = function () {
+     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+     document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+     }
+     }
+
+     xmlDoc = xmlhttp.responseXML;
+     txt = "";
+     x = xmlDoc.getElementsByTagName("ARTIST");
+     for (i = 0; i < x.length; i++) {
+     txt = txt + x[i].childNodes[0].nodeValue + "<br />";
+     }
+     document.getElementById("myDiv").innerHTML = txt;
+     */
+
+    let flag1 = 1;
+    let flag2 = 1;
+    let flag3 = 1;
+
+    /*$.get(url1, function(res){
+     flag1 = 2;
+     });
+     $.get(url2, function(){
+     flag2 = 2;
+
+     });
+     $.get(url3, function(){
+     flag3 = 2;
+
+     });
+
+     setInterval(function(){
+     if(flag1 == 2 && flag2 == 2 && flag2 == 2){
+     ...
+     }
+     }, 500);*/
+
+    /*let p1 = new Promise((reslove, reject) => {
+     $.get('product-data.json', function (res) {
+     if(res.productData.length > 0){
+     reslove(res.productData);
+     }else{
+     reject();
+     }
+     }, 'json');
+     });
+
+     p1.then((data)=>{
+     console.log('成功');
+     console.log(data);
+     }).catch(()=>{
+     console.log('失败');
+     });*/
+
+    let p1 = new Promise((reslove, reject) => {
+        setTimeout(() => {
+            console.log('p1');
+            reslove();
+        }, 1000);
+    });
+    let p2 = new Promise((reslove, reject) => {
+        setTimeout(() => {
+            console.log('p2');
+            reslove();
+        }, 2000);
+    });
+    let p3 = new Promise((reslove, reject) => {
+        setTimeout(() => {
+            console.log('p3');
+            reslove();
+        }, 3000);
+    });
+    /*Promise.all([p1, p2, p3]).then(()=>{
+        console.log('成功');
+    }).catch(()=>{
+        console.log('失败');
+    });*/
+    Promise.race([p1, p2, p3]).then(()=>{
+        console.log('成功');
+    }).catch(()=>{
+        console.log('失败');
+    });
+
+
+</script>
+</body>
+</html>
