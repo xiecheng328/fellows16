@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+        number string boolean undefined null symbol
+     -->
+
+    <script>
+
+        let name = Symbol();
+        let obj = {
+            name: 'lisi',
+            age: 18
+        };
+        obj[name] = 'zhangsan';
+        // console.log(obj[name]);
+        for(let p in obj){
+            console.log(p);
+        }
+
+
+
+    </script>
+</body>
+
+</html>
