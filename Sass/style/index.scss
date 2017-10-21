@@ -1,0 +1,73 @@
+/*! 这是一个强制注释 */
+/* 这是一个多行注释 */
+//这是一个单行注释
+
+//变量
+$color: #ff0;
+$w: 300px;
+#div1{
+    width: $w;
+    height: $w;
+    background: $color;
+    color: $color;
+    // font-size: 14px;
+    .aa{
+        width: 300px;
+        .bb{
+            width: 400px;
+        }
+        &:hover{
+            width: 400px;
+        }
+        &-test{
+            width: 200px;
+        }
+    }
+    .cc{
+        background: $color;
+    }
+}
+#div2{
+    width: 300px;
+    height: 300px;
+    background: {
+        color: $color;
+        image: url(xx.jpg);
+    }
+    border: {
+        bottom: {
+            color: $color;
+            weight: 2px;
+            style: solid;
+        }
+    }
+}
+
+
+$wid: width;
+#div1{
+    #{$wid}: 200px;
+}
+
+@mixin xx($bg:#ccc, $w:200px){
+    width: $w;
+    height: 200px;
+    background: $bg;
+}
+#div1{
+    @include xx($w:300px,$bg:#f00);
+}
+#div2{
+    @include xx(#0f0);
+}
+#div3{
+    @include xx();
+    font-size: 12px;
+}
+#div3 .aa{
+    background: #ff0000;
+}
+#div4{
+    @extend #div3;
+}
+@import 'base/common';

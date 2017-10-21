@@ -1,0 +1,80 @@
+@charset "UTF-8";
+/*! 这是一个强制注释 */
+/* 这是一个多行注释 */
+#div1 {
+  width: 300px;
+  height: 300px;
+  background: #ff0;
+  color: #ff0;
+}
+#div1 .aa {
+  width: 300px;
+}
+#div1 .aa .bb {
+  width: 400px;
+}
+#div1 .aa:hover {
+  width: 400px;
+}
+#div1 .aa-test {
+  width: 200px;
+}
+#div1 .cc {
+  background: #ff0;
+}
+
+#div2 {
+  width: 300px;
+  height: 300px;
+  background-color: #ff0;
+  background-image: url(xx.jpg);
+  border-bottom-color: #ff0;
+  border-bottom-weight: 2px;
+  border-bottom-style: solid;
+}
+
+#div1 {
+  width: 200px;
+}
+
+#div1 {
+  width: 300px;
+  height: 200px;
+  background: #f00;
+}
+
+#div2 {
+  width: 200px;
+  height: 200px;
+  background: #0f0;
+}
+
+#div3, #div4 {
+  width: 200px;
+  height: 200px;
+  background: #ccc;
+  font-size: 12px;
+}
+
+#div3 .aa, #div4 .aa {
+  background: #ff0000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+}
+
+/*# sourceMappingURL=index.css.map */
