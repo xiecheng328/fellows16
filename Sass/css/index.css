@@ -77,4 +77,84 @@ img {
   border: 0;
 }
 
+#div1 {
+  background: #f00;
+}
+
+#div2 {
+  background-image: "url(img/xx.jpg)";
+  float: LEFT;
+}
+
+/*
+$hw 代表的是 hello world
+*/
+.item-icon {
+  width: 200px;
+}
+
+#div1 {
+  color: #ccc;
+}
+
+.col-lg-1 {
+  width: 10%;
+}
+
+.col-lg-2 {
+  width: 20%;
+}
+
+.col-lg-3 {
+  width: 30%;
+}
+
+.col-lg-4 {
+  width: 40%;
+}
+
+.col-lg-5 {
+  width: 50%;
+}
+
+.icon-error {
+  background-image: url("img/error.jpg");
+}
+
+.icon-waring {
+  background-image: url("img/waring.jpg");
+}
+
+.icon-success {
+  background-image: url("img/success.jpg");
+}
+
+.col-6 {
+  width: 60%;
+}
+
+.col-5 {
+  width: 50%;
+}
+
+.col-4 {
+  width: 40%;
+}
+
+.col-3 {
+  width: 30%;
+}
+
+.col-2 {
+  width: 20%;
+}
+
+.col-1 {
+  width: 10%;
+}
+
+#div1 {
+  color: #fff;
+}
+
 /*# sourceMappingURL=index.css.map */

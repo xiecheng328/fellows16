@@ -71,3 +71,99 @@ $wid: width;
     @extend #div3;
 }
 @import 'base/common';
+
+$a: #f00;
+@mixin aa($bb:$a){
+    background: $bb;
+}
+#div1{
+    @include aa();
+}
+
+#div2{
+    // width: (100px / 50);
+    // height: floor(10.4px);
+    // width: percentage(30px / 100px);
+    // height: max(5px, 10px,20px);
+    background-image: 'url(img/' + 'xx.jpg)';
+    float: to-upper-case(left);
+}
+$hw: 'hello world';
+$bgc: rgba(255, 0, 0, .5);
+
+
+/*
+$hw 代表的是 #{$hw}
+*/
+#div3{
+    // width: str-index($hw, 'world') + px;
+    // height: str-insert($hw, ' web ', 6);
+
+    // background-color: transparentize($bgc, 0.3);
+}
+
+$map: (light: #fff, dark: #000);
+#div2{
+    // background-color: map-get($map, dark);
+    // background-color: map-remove($map, dark, light);
+}
+
+$icon1: icon;
+$w: 'width';
+.item-#{$icon1}{
+    #{$w}: 200px;
+}
+
+
+@function xx($bg){
+    @if($bg == 1){
+        @return #f00;
+    }@else if($bg == 2){
+        @return #0f0;
+    }@else{
+        @return #ccc;
+    }
+}
+#div1{
+    color: xx(3);
+}
+
+
+$column: 5;
+@for $i from 1 through $column{
+    .col-lg-#{$i}{
+        width: percentage($i / 10);
+    }
+}
+
+$icons: error waring success;
+@each $icon in $icons{
+    .icon-#{$icon}{
+        background-image: url('img/'+ $icon+ '.jpg');
+    }
+}
+
+$i : 6;
+@while $i > 0 {
+    .col-#{$i}{
+        width: percentage($i / 10);
+    }
+    $i: $i - 1;
+}
+
+$map: (light: #fff, dark: #000);
+@function get-color($color){
+    @if not map-has-key($map, $color){
+        @error '$map 里面不包含key值为: #{$color}';
+        @return #ccc;
+    }
+    @return map-get($map, $color);
+}
+
+#div1{
+    color: get-color(light);
+}
+
+
+
+
