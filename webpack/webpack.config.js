@@ -4,10 +4,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const PurifyCSSPlugin = require('purifycss-webpack');
+const webpack = require('webpack');
+const entry = require('./webpack_config/entry_config.js');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
-    entry: {
-        entry: './src/index.js',
-    },
+    entry: entry,
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
@@ -77,7 +79,20 @@ module.exports = {
         new ExtractTextPlugin("css/index.css"),
         new PurifyCSSPlugin({
             paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        })
+        }),
+        new webpack.BannerPlugin('成哥所有，翻版必究!'),
+        new webpack.ProvidePlugin({
+            $: 'jquery'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['jquery', 'vue'],
+            filename: 'assets/js/[name].js',
+            minChunks: 2
+        }),
+        new CopyWebpackPlugin([{
+            from : __dirname + '/src/public',
+            to : './public'
+        }])
         // new UglifyJSPlugin()
 
     ],
@@ -86,5 +101,10 @@ module.exports = {
         host: '127.0.0.1',
         port: 8081,
         compress: true
+    },
+    watchOptions: {
+        poll : 1000,
+        aggregeateTimeout: 500,
+        ignored: /node_modules/
     }
 };
