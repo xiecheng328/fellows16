@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(school, index) in list" :key="index">
+                {{school}} -- {{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="item in sortArr">
+                {{item}}
+            </li>
+        </ul>
+
+        <ul>
+            <li v-for="(val, key, index) in obj" :key="index">
+                {{key}} : {{val}} : {{index}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="user in users">
+                {{user.name}} -- {{user.age}} -- {{user.school}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        // 类 对象
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                list: ['林大', '理工', '农大', '黑大'],
+                arr: [1, 4, 5, 7, 3, 2, 11],
+                obj: {
+                    name: 'zhangsan',
+                    age: 18,
+                    school: '黑大'
+                },
+                users: [
+                    {
+                        name: 'zhangsan',
+                        age: 18,
+                        school: '黑大'
+                    }, {
+                        name: 'lisi',
+                        age: 20,
+                        school: '农大'
+                    }, {
+                        name: 'wangwu',
+                        age: 30,
+                        school: '林大'
+                    }
+                ]
+            },
+            //计算属性
+            computed: {
+                sortArr: function () {
+                    return this.arr.sort(function (a, b) {
+                        return a - b;
+                    });
+                }
+            }
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
