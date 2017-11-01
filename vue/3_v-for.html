@@ -27,7 +27,7 @@
             </li>
         </ul>
         <ul>
-            <li v-for="user in users">
+            <li v-for="user in sortUser">
                 {{user.name}} -- {{user.age}} -- {{user.school}}
             </li>
         </ul>
@@ -67,6 +67,11 @@
                 sortArr: function () {
                     return this.arr.sort(function (a, b) {
                         return a - b;
+                    });
+                },
+                sortUser: function(){
+                    return this.users.sort(function(a, b){
+                        return b.age - a.age;
                     });
                 }
             }

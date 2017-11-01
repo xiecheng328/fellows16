@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <input type="text" v-model="msg">
+        <div>{{msg}}</div> -->
+        <form action="">
+            <label>用户名: <input type="text" v-model="username" placeholder="请输入用户名"></label>
+            <label>用户名.lazy: <input type="text" v-model.lazy="username" placeholder="请输入用户名"></label>
+            <label>用户名.number: <input v-model.number="username" placeholder="请输入用户名" type="number"></label>
+            <label>用户名.trim: <input v-model.trim="username" placeholder="请输入用户名" type="text"></label>
+            <div>用户名是: {{username}}</div>
+
+            性别: 
+            <input type="radio" v-model="sex" value="男">男
+            <input type="radio" v-model="sex" value="女">女
+            <div>性别是: {{sex}}</div>
+
+            爱好:
+            <input type="checkbox" value="足球" v-model="hobby">足球
+            <input type="checkbox" value="篮球" v-model="hobby">篮球
+            <input type="checkbox" value="排球" v-model="hobby">排球
+            <div>爱好是：{{hobby}}</div>
+
+            学校:
+            <select v-model="school">
+                <option value="黑大">黑大</option>
+                <option value="林大">林大</option>
+                <option value="农大">农大</option>
+                <option value="理工">理工</option>
+            </select>
+            <div>学校是: {{school}}</div>
+
+            说明:
+            <textarea name="" id="" cols="30" rows="10" v-model="description"></textarea>
+            <div>说明是:{{description}}</div>
+        </form>
+    </div>
+
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                username: '',
+                sex: '',
+                hobby: [],
+                school: '农大',
+                description: ''
+            }
+        });
+
+    </script>
+</body>
+
+</html>
