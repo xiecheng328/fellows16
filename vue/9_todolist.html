@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #app {
+            width: 400px;
+            margin: 100px auto;
+        }
+
+        #app h1 {
+            text-align: center;
+        }
+
+        #list li {
+            height: 50px;
+            background: #cccccc;
+            margin-top: 10px;
+            line-height: 50px;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .product-name {
+            float: left;
+        }
+
+        .product-price {
+            float: right;
+        }
+
+        #list .red {
+            background: #ff0000;
+        }
+
+        #list .del {
+            float: left;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        #list input[type="checkbox"] {
+            float: left;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        <hr>
+        <div>
+            <label>名称:
+                <input type="text" v-model="name" placeholder="请输入产品名称">
+            </label>
+            <label>价格:
+                <input type="text" v-model="price">
+            </label>
+            <button @click="add">增加</button>
+        </div>
+        <div>
+            <input type="text" placeholder="请输入搜索关键字" v-model="keyword">
+            <button @click="search">查询</button>
+        </div>
+
+
+        <ul id="list">
+            <li v-for="(product, index) in productList" @click="select(product)" :class="{red:product.isRed}">
+                <input type="checkbox" @click.stop="" v-model="checked" :value="index">
+                <span class="del" @click.stop="del(index)">[X]</span>
+                <span class="product-name">{{product.name}}</span>
+                <span class="product-price">{{product.price}}</span>
+            </li>
+        </ul>
+        <div id="total">
+            <button @click="delAll">删除选中</button>
+            总价： {{sum()}}
+        </div>
+
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                productList: [
+                    {
+                        name: '衣服',
+                        price: '123',
+                        isRed: false
+                    }, {
+                        name: '裤子',
+                        price: '564',
+                        isRed: false
+                    }, {
+                        name: '鞋',
+                        price: '66',
+                        isRed: false
+                    }, {
+                        name: 'iphoneX',
+                        price: '8888',
+                        isRed: false
+                    }, {
+                        name: '电脑',
+                        price: '986',
+                        isRed: false
+                    }
+                ],
+                total: 0,
+                name: '',
+                price: 0,
+                checked: [],
+                keyword: ''
+            },
+            methods: {
+                select(product) {
+                    product.isRed = !product.isRed;
+                    /* if(product.isRed){
+                        this.total += parseInt(product.price);
+                    }else{
+                        this.total -= parseInt(product.price);
+                    } */
+                    // this.sum();
+                },
+                sum() {
+                    let sum = 0;
+                    this.productList.forEach(function (val, idx) {
+                        if (val.isRed) {
+                            sum += parseInt(val.price);
+                        }
+                    });
+                    return sum;
+                },
+                add() {
+                    this.productList.push({
+                        name: this.name,
+                        price: this.price,
+                        isRed: false
+                    });
+                    this.name = '';
+                    this.price = 0;
+                },
+                del(index) {
+                    this.productList.splice(index, 1);
+                },
+                delAll() {
+                    console.log(this.checked);
+                    /* this.checked.forEach((val)=>{
+                        this.productList.splice(val, 1);//数组下标改变了
+                    }); */
+
+                    //filter返回符合条件的新的数组
+                    let arr = this.productList.filter((val, idx) => {
+                        if (!this.checked.includes(idx)) {
+                            return val;
+                        }
+                    });
+                    this.productList = arr;
+                    this.checked = [];
+                },
+                search(){
+                    let arr = this.productList.filter((val, key)=>{
+                        if(val.name.includes(this.keyword)){
+                            return val;
+                        }
+                    });
+                    this.productList = arr;
+                }
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
