@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="change">change</button>
+        <button @click="destroy">销毁</button>
+        {{msg}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 1,
+                timer: null
+            },
+            methods: {
+                change(){
+                    this.msg++;
+                },
+                destroy(){
+                    vm.$destroy();
+                }
+            },
+            beforeCreate(){
+                console.log('beforeCreate');
+            },
+            created(){
+                console.log('created');
+            },
+            beforeMount(){
+                console.log('beforeMount');
+            },
+            mounted(){
+                console.log('mounted');
+                this.timer = setInterval(()=>{
+                    console.log('timer');
+                    this.msg++;
+                }, 1000);
+            },
+            beforeUpdate(){
+                console.log('beforeUpdate');
+            },
+            updated(){
+                console.log('updated');
+            },
+            beforeDestroy(){
+                console.log('beforeDestroy');
+                clearInterval(this.timer);
+            },
+            destroyed(){
+                console.log('destroyed');
+            }
+        });
+    </script>
+</body>
+
+</html>

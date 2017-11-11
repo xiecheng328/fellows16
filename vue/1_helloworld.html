@@ -12,17 +12,28 @@
     <div id="app">
         {{msg}}
     </div>
+   
+    <div id="app2"></div>
 
     <script src="vue.js"></script>
     <script>
         // 类 对象
         var vm = new Vue({
             el: '#app',
-            data: {
+            /* data: {
                 msg: 'Hello World!'
+            } */
+            data(){
+                return {
+                    msg: 'Hello World!'
+                };
             }
         });
         console.log(vm);
+
+        new Vue({
+            el: '#app2'
+        });
 
 
     </script>

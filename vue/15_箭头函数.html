@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj = {
+        name: 'zhangsan',
+        fn1: function(){
+            console.log(this);
+        },
+        fn2(){
+            console.log(this);
+        },
+        fn3: () => {
+            console.log(this);
+        }
+    };
+    obj.fn1();//obj
+    obj.fn2();//obj
+    obj.fn3();//window
+    
+    </script>
+</body>
+</html>
