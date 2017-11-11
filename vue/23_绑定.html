@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" id="ipt">
+        <h1 id="h1"></h1>
+
+    </div>
+    <!-- <script src="vue.js"></script> -->
+
+    <script>
+        /* new Vue({
+            el: '#app',
+            data: {
+                msg: ''
+            }
+        }); */
+        var obj = {};
+        
+        var oIpt = document.getElementById('ipt');
+        oIpt.onkeyup = function(){
+            obj.name = this.value;
+        };
+
+        Object.defineProperty(obj, 'name', {
+            get: function(){
+                
+            },
+            set: function(val){
+                // console.log(val);
+                document.getElementById('h1').innerHTML = val;
+            }
+        });
+    </script>
+</body>
+
+</html>

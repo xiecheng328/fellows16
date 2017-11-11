@@ -10,7 +10,9 @@
 
 <body>
     <div id="app">
-        <weichuang :msg="msg"></weichuang>
+        <div @click="add">divAdd</div>
+        <weichuang :msg="msg" @click.native="add"></weichuang>
+        <div>{{num}}</div>
     </div>
 
     <script src="vue.js"></script>
@@ -35,10 +37,16 @@
         new Vue({
             el: '#app',
             data: {
-               msg: 'msg123'
+               msg: 'msg123',
+               num: 1
             },
             components: {
                 weichuang: wxwx
+            },
+            methods: {
+                add(){
+                    this.num++;
+                }
             }
         });
     </script>

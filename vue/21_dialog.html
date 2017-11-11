@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dialog-mask {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #cccccc;
+        }
+
+        .dialog-box {
+            width: 500px;
+            height: 400px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid;
+        }
+
+        .dialog-title {
+            height: 30px;
+            background: #000000;
+            color: #fff;
+            line-height: 30px;
+            padding: 0 10px;
+        }
+
+        .dialog-title-item {
+            float: left;
+        }
+
+        .dialog-title-close {
+            float: right;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="showLogin=true">登录</button>
+        <button @click="showRegister=true">注册</button>
+
+        <!-- 登录 -->
+        <my-dialog v-show="showLogin" @close="showLogin=false">
+            <span slot="item">登录</span>
+            <div slot="content">
+                <p>
+                    <label>用户名:
+                        <input type="text">
+                    </label>
+                </p>
+                <p>
+                    <label>密码:
+                        <input type="password">
+                    </label>
+                </p>
+                <input type="submit" value="登录">
+            </div>
+        </my-dialog>
+        <!-- 注册 -->
+        <my-dialog v-show="showRegister" @close="showRegister=false">
+            <span slot="item">注册</span>
+            <div slot="content">
+                用户名：
+                密码：
+                年龄：
+                学校：
+                。。。
+            </div>
+        </my-dialog>
+    </div>
+
+    <template id="dialog">
+        <div class="dialog-mask">
+            <div class="dialog-box">
+                <div class="dialog-title">
+                    <span class="dialog-title-item">
+                        <slot name="item"></slot>
+                    </span>
+                    <span class="dialog-title-close" @click="$emit('close')">[X]</span>
+                </div>
+                <div class="dialog-content">
+                    <slot name="content">默认值</slot>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            components: {
+                myDialog: {
+                    template: '#dialog'
+                }
+            },
+            data: {
+                showLogin: false,
+                showRegister: false
+            }
+        });
+    </script>
+</body>
+
+</html>
