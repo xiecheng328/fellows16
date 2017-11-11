@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="imgSrc" alt="">
+
+        <weichuang :wcwx='msg3'></weichuang>
+        <my-component :aa="msg" :bb="msg2"></my-component>
+    </div>
+
+    <div id="app2">
+            <weichuang></weichuang>
+    </div>
+
+    <script src="vue.js"></script>
+
+    <script>
+        Vue.component('weichuang', {
+            template: `
+            <div>
+                    <h1>{{wcwx}}</h1>
+                    <div>dididiv</div>
+            </div>
+            `,
+            props: ['wcwx']
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                msg: '这是一个局部组件',
+                imgSrc:'',
+                msg2: 'hello',
+                msg3: '这是一个全局组件'
+            },
+            components: {
+                myComponent: {
+                    template: `<h1>{{aa}}--{{bb}}</h1>`,
+                    props: ['aa', 'bb']
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app2'
+        });
+    </script>
+</body>
+
+</html>
