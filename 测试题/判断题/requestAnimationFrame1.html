@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #progress{
+            height: 30px;
+            background: #ff0000;
+            width: 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <div id="progress"></div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oProgress = document.getElementById('progress');
+        oBtn.onclick = function(){
+            var i= 0;
+            var timer = setInterval(function(){
+                oProgress.style.width = i + '%';
+                oProgress.innerHTML = i + '%';
+                i++;
+                if(i > 100){
+                    clearInterval(timer);
+                }
+            }, 50);
+        };
+    
+    </script>
+</body>
+</html>

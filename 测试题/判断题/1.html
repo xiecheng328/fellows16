@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 100px;
+        }
+
+        #div2 {
+            width: 50%;
+            height: 50%;
+            padding-top: 50%;
+            background: #ff0000;
+        }
+
+        #div3 {
+            padding-top: 100%;
+            background: #ff0000;
+        }
+
+        #div4 {
+            background: #00ff00;
+            overflow: hidden;
+        }
+
+        #div4::after {
+            content: '';
+            display: block;
+            margin-top: 100%;
+        }
+
+        #div5{
+            background: #ffff00;
+            height: 100vw;
+        }
+        /* vw vh vmin vmax */
+        #span1{
+            background: #cccccc;
+            /* margin: 50px; */
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"></div>
+
+    <span id="span1">span1</span>
+</body>
+
+</html>
