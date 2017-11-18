@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [5, 3, 1, NaN, 8];
+        arr.forEach(function(elem, index){
+            if(isNaN(elem)){
+                console.log('有');
+            }
+        });
+        console.log(arr.indexOf(NaN));
+        console.log(arr.includes(NaN));
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        定一个函数test(n,m)  n>1,m>n,返回n到m之间的所有回文数。（回文数是正读和反读相同的数，例如 121，1001,…）
+     -->
+    <script>
+        function test(n, m) {
+            for (var i = n; i <= m; i++) {
+                if (i.toString().split('').reverse().join('') == i) {
+                    console.log(i);
+                }
+            }
+        }
+        test(10, 200);
+    </script>
+</body>
+
+</html>

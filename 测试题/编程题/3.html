@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function mySort() {    
+            var tags = new Array(); //使用数组作为参数存储容器
+            //请补充你的代码
+            // tags = [...arguments];
+
+            /* for(var i=0; i<arguments.length; i++){
+                tags.push(arguments[i]);
+            } */
+
+            // tags = Array.prototype.slice.call(arguments);
+            
+            tags = [].slice.call(arguments);
+
+            // console.log(tags);
+            tags.sort(function(a, b){
+                return a - b;
+            });
+                
+            return tags; //返回已经排序的数组
+        }
+        var result = mySort(50, 11, 16, 32, 24, 99, 57, 100);
+        //传入参数个数不确定
+        console.info(result); //显示结果
+    </script>
+</body>
+
+</html>

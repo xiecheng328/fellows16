@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+1.	写一个函数，用于随机生成一个n-m之间的数字
+function getRandom(n,m){
+}
+
+
+     -->
+    <script>
+        function getRandom(n, m) {
+            // return Math.ceil(Math.random() * (m - n) + 10)
+
+            return Math.floor(Math.random(m - n + 1)) + n;
+        }
+
+        getRandom(10, 100);
+    </script>
+</body>
+
+</html>
