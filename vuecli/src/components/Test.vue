@@ -1,5 +1,8 @@
 <template>
-  <h1 class="test">{{msg}}</h1>
+    <div>
+        <h1 class="test">{{msg}}</h1>
+        <router-view/>
+    </div>
 </template>
 
 <script>
