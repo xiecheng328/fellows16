@@ -27,6 +27,14 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App123'
     }
+  },
+  beforeRouteEnter: (to, from, next) => {
+    console.log('准备进入');
+    next();
+  },
+  beforeRouteLeave: (to, from, next) => {
+    console.log('准备离开');
+    next();
   }
 }
 </script>
