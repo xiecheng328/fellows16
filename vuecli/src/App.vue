@@ -60,7 +60,7 @@ export default {
   transition: opacity 0.5s;
 }
 .fade-leave-active {
-  overflow: 0;
+  opacity: 0;
   transition: opacity 0.5s;
 }
 </style>

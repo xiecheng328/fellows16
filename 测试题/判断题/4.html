@@ -25,7 +25,7 @@
         var getName = myDog.getName;
         var getName = function () {
             console.log(this);
-            return this.name;//window.name
+            return this.name;//window.name = ''
         };
         console.log(getName('cat'));
     </script>
