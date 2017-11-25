@@ -31,7 +31,6 @@ export default {
             lrc: '/static/' + element.lrc
           });
         });
-        console.log(this.songs);
         this.isShow = true;
       })
       .catch();
