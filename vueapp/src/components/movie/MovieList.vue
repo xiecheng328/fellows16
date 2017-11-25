@@ -68,7 +68,7 @@ export default {
         "http://m.maoyan.com/movie/list.json?type=hot&limit=10&offset=" +
         this.moveList.length;
       // url2表示本地的电影数据json文件
-      let url2 = "/static/moviedata.json";
+      let url2 = "/static/data/moviedata.json";
       Axios.get(url2)
         .then(res => {
           this.loadingShow = false;

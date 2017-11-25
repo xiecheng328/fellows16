@@ -1,11 +1,10 @@
 <template>
-    <div>
-        <common-header>
-            <span slot="title">Movie</span>
-        </common-header>
-        <router-view></router-view>
-        <common-footer></common-footer>
-    </div>
+<div>
+    <common-header bg="rgb(121, 85, 72)">
+        <span slot="title">Book</span>
+    </common-header>
+    <common-footer bg="rgb(121, 85, 72)"></common-footer>
+</div>
 </template>
 
 <script>

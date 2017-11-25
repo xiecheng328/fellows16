@@ -41,7 +41,7 @@ export default {
       "http://m.maoyan.com/movie/" +
       this.$route.params.movieId +
       ".json";
-    let url2 = "/static/moviedetail.json";
+    let url2 = "/static/data/moviedetail.json";
     Axios.get(url2).then(res => {
       this.detail = res.data.data.MovieDetailModel;
     });

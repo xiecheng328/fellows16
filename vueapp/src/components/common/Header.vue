@@ -1,7 +1,9 @@
 <template>
-  <div class="header">
+  <div class="header" :style="{background:bg}">
       <span class="home" @click="goHome">首页</span>
-      <h2 class="title">Movie</h2>
+      <h2 class="title">
+          <slot name="title">默认值</slot>
+      </h2>
   </div>
 </template>
 
@@ -11,7 +13,8 @@ export default {
         goHome(){
             this.$router.push('/');
         }
-    }
+    },
+    props: ['bg']
 }
 </script>
 
