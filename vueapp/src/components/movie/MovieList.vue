@@ -48,7 +48,7 @@ export default {
     // 监听滚动条事件
     window.onscroll = () => {
       let clientHeight = document.documentElement.clientHeight;
-      let scrollTop = document.documentElement.scrollTop;
+      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       let scrollHeight = document.documentElement.scrollHeight;
       if (clientHeight + scrollTop == scrollHeight) {
         this.loadingShow = true;
