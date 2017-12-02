@@ -1,6 +1,6 @@
 <template>
     <div class="albums">
-        <a-player v-if="isShow" :autoplay="true" :music="songs" :showlrc="3"></a-player>
+        <a-player v-if="isShow" :autoplay="true" :music="songs" :showlrc="3" :mutex="true"></a-player>
     </div>
 </template>
 
