@@ -10,51 +10,60 @@ import PhotoList from '@/components/photo/PhotoList'
 import PhotoDetail from '@/components/photo/PhotoDetail'
 import MusicList from '@/components/music/MusicList'
 import MusicAlbums from '@/components/music/MusicAlbums'
-
+import Login from '@/components/welcome/Login'
+import Index from '@/components/welcome/Index'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path     : '/login',
+      component: Login
+    },
+    {
+      path     : '/index',
+      component: Index
+    },
+    {
+      path    : '/',
       redirect: '/movie/movieList'
     }, {
-      path: '/movie',
+      path     : '/movie',
       component: Movie,
-      children: [
+      children : [
         {
-          path: 'movieList',
+          path     : 'movieList',
           component: MovieList
         }, {
-          path: 'movieDetail/:movieId',
+          path     : 'movieDetail/:movieId',
           component: MovieDetail
         }
       ]
     }, {
-      path: '/music',
+      path     : '/music',
       component: Music,
-      redirect: '/music/musicList',
-      children: [
+      redirect : '/music/musicList',
+      children : [
         {
-          path: 'musicList',
+          path     : 'musicList',
           component: MusicList
         }, {
-          path: 'musicAlbums/:musicId',
+          path     : 'musicAlbums/:musicId',
           component: MusicAlbums
         }
       ]
     }, {
-      path: '/book',
+      path     : '/book',
       component: Book
     }, {
-      path: '/photo',
+      path     : '/photo',
       component: Photo,
-      children: [
+      children : [
         {
-          path: 'photoList',
+          path     : 'photoList',
           component: PhotoList
         }, {
-          path: 'photoDetail/:index',
+          path     : 'photoDetail/:index',
           component: PhotoDetail
         }
       ]
